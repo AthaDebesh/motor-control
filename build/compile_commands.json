@@ -1,0 +1,44 @@
+[
+{
+  "directory": "/home/athadebesh/projects/motor-control/build",
+  "command": "/usr/bin/c++  -I/home/athadebesh/projects/motor-control/include -g -std=gnu++17 -o CMakeFiles/system.dir/src/main.cpp.o -c /home/athadebesh/projects/motor-control/src/main.cpp",
+  "file": "/home/athadebesh/projects/motor-control/src/main.cpp",
+  "output": "CMakeFiles/system.dir/src/main.cpp.o"
+},
+{
+  "directory": "/home/athadebesh/projects/motor-control/build",
+  "command": "/usr/bin/c++  -I/home/athadebesh/projects/motor-control/include -g -std=gnu++17 -o CMakeFiles/system.dir/src/motor.cpp.o -c /home/athadebesh/projects/motor-control/src/motor.cpp",
+  "file": "/home/athadebesh/projects/motor-control/src/motor.cpp",
+  "output": "CMakeFiles/system.dir/src/motor.cpp.o"
+},
+{
+  "directory": "/home/athadebesh/projects/motor-control/build",
+  "command": "/usr/bin/c++  -I/home/athadebesh/projects/motor-control/include -g -std=gnu++17 -o CMakeFiles/system.dir/src/realtime.cpp.o -c /home/athadebesh/projects/motor-control/src/realtime.cpp",
+  "file": "/home/athadebesh/projects/motor-control/src/realtime.cpp",
+  "output": "CMakeFiles/system.dir/src/realtime.cpp.o"
+},
+{
+  "directory": "/home/athadebesh/projects/motor-control/build",
+  "command": "/usr/bin/c++  -I/home/athadebesh/projects/motor-control/include -g -std=gnu++17 -o CMakeFiles/system.dir/src/sensor.cpp.o -c /home/athadebesh/projects/motor-control/src/sensor.cpp",
+  "file": "/home/athadebesh/projects/motor-control/src/sensor.cpp",
+  "output": "CMakeFiles/system.dir/src/sensor.cpp.o"
+},
+{
+  "directory": "/home/athadebesh/projects/motor-control/build",
+  "command": "/usr/bin/c++  -I/home/athadebesh/projects/motor-control/include -g -std=gnu++17 -o CMakeFiles/test_jitter.dir/tests/test_jitter.cpp.o -c /home/athadebesh/projects/motor-control/tests/test_jitter.cpp",
+  "file": "/home/athadebesh/projects/motor-control/tests/test_jitter.cpp",
+  "output": "CMakeFiles/test_jitter.dir/tests/test_jitter.cpp.o"
+},
+{
+  "directory": "/home/athadebesh/projects/motor-control/build",
+  "command": "/usr/bin/c++  -I/home/athadebesh/projects/motor-control/include -g -std=gnu++17 -o CMakeFiles/test_jitter.dir/src/sensor.cpp.o -c /home/athadebesh/projects/motor-control/src/sensor.cpp",
+  "file": "/home/athadebesh/projects/motor-control/src/sensor.cpp",
+  "output": "CMakeFiles/test_jitter.dir/src/sensor.cpp.o"
+},
+{
+  "directory": "/home/athadebesh/projects/motor-control/build",
+  "command": "/usr/bin/c++  -I/home/athadebesh/projects/motor-control/include -g -std=gnu++17 -o CMakeFiles/test_jitter.dir/src/realtime.cpp.o -c /home/athadebesh/projects/motor-control/src/realtime.cpp",
+  "file": "/home/athadebesh/projects/motor-control/src/realtime.cpp",
+  "output": "CMakeFiles/test_jitter.dir/src/realtime.cpp.o"
+}
+]
