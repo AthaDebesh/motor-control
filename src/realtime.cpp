@@ -20,3 +20,16 @@ void setRealTimePriority()
         exit(EXIT_FAILURE);
     }
 }
+
+void setCPUAffinity() {
+    cpu_set_t cpuset;
+    CPU_ZERO(&cpuset);
+    CPU_SET(1, &cpuset);  // Run on CPU Core 2 (adjust as needed)
+
+    if (sched_setaffinity(0, sizeof(cpu_set_t), &cpuset) != 0) {
+        std::cerr << "Failed to set CPU affinity!\n";
+    } else {
+        std::cout << "CPU Affinity set to Core 2\n";
+    }
+}
+

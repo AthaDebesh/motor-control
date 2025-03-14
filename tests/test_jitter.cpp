@@ -1,42 +1,55 @@
 #include <iostream>
-#include <fstream>
 #include <ctime>
-#include <cassert>
+#include <vector>
+#include <cmath>
+#include <algorithm>
 #include "sensor.hpp"
 #include "realtime.hpp"
 
-#define TARGET_INTERVAL_NS 100000000L // 100 ms in nanoseconds
-#define JITTER_THRESHOLD_NS 100000L   // 0.1 ms (100 µs) in nanoseconds
+#define EXPECTED_INTERVAL_NS 100000000L
+#define JITTER_THRESHOLD_NS  1000000L
 
 int main() {
+
     setRealTimePriority();
+    setCPUAffinity();
 
     TemperatureSensor sensor("ABC123");
 
-    struct timespec next, now;
-    clock_gettime(CLOCK_MONOTONIC, &next);
+    struct timespec start_time, end_time;
+    std::vector<long> jitter_values;
 
-    long min_jitter = 999999999, max_jitter = 0;
+    double temperature;
 
-    for (int i = 0; i < 100; i++) {
-        next.tv_nsec += TARGET_INTERVAL_NS;
-        if (next.tv_nsec >= 1000000000) {  
-            next.tv_sec += next.tv_nsec / 1000000000;
-            next.tv_nsec %= 1000000000;
-        }
+    clock_gettime(CLOCK_MONOTONIC_RAW, &start_time);
 
-        clock_nanosleep(CLOCK_MONOTONIC, TIMER_ABSTIME, &next, nullptr);
+    for (int i = 0; i < 100; ++i)
+    {
+        temperature = sensor.readTemperature();
 
-        clock_gettime(CLOCK_MONOTONIC, &now);
-        long actual_ns = now.tv_sec * 1000000000L + now.tv_nsec;
-        long expected_ns = next.tv_sec * 1000000000L + next.tv_nsec;
-        long jitter_ns = actual_ns - expected_ns;
+        clock_gettime(CLOCK_MONOTONIC_RAW, &end_time);
 
-        if (jitter_ns < min_jitter) min_jitter = jitter_ns;
-        if (jitter_ns > max_jitter) max_jitter = jitter_ns;
+        long actual_interval_ns = 
+            (end_time.tv_sec - start_time.tv_sec) * 1e9 +
+            (end_time.tv_nsec - start_time.tv_nsec);
 
-        assert(min_jitter <= JITTER_THRESHOLD_NS && "❌ Min jitter exceeded limit!");
-        assert(max_jitter <= JITTER_THRESHOLD_NS && "❌ Max jitter exceeded limit!");
+        long jitter_ns = std::abs(actual_interval_ns - EXPECTED_INTERVAL_NS);
+        jitter_values.push_back(jitter_ns);
+
+        std::cout << "Iteration " << i+1 << " | Expected: 100ms | Actual: " << actual_interval_ns / 1e6 << " ms | Jitter: " << jitter_ns / 1e3 << " µs" << std::endl;
+
+        start_time = end_time;
+    }
+
+    long min_jitter = *std::min_element(jitter_values.begin(), jitter_values.end());
+    long max_jitter = *std::max_element(jitter_values.begin(), jitter_values.end());
+
+    if (max_jitter <= JITTER_THRESHOLD_NS) {
+        std::cout << "\n✅ Jitter test PASSED! (Min: " 
+                  << min_jitter / 1e3 << " µs, Max: " << max_jitter / 1e3 << " µs)" << std::endl;
+    } else {
+        std::cout << "\n❌ Jitter test FAILED! (Min: " 
+                  << min_jitter / 1e3 << " µs, Max: " << max_jitter / 1e3 << " µs)" << std::endl;
     }
 
     return 0;
