@@ -11,6 +11,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/athadebesh/projects/motor-control/src/main.cpp" "CMakeFiles/system.dir/src/main.cpp.o" "gcc" "CMakeFiles/system.dir/src/main.cpp.o.d"
   "/home/athadebesh/projects/motor-control/src/motor.cpp" "CMakeFiles/system.dir/src/motor.cpp.o" "gcc" "CMakeFiles/system.dir/src/motor.cpp.o.d"
   "/home/athadebesh/projects/motor-control/src/realtime.cpp" "CMakeFiles/system.dir/src/realtime.cpp.o" "gcc" "CMakeFiles/system.dir/src/realtime.cpp.o.d"
+  "/home/athadebesh/projects/motor-control/src/revisions.cpp" "CMakeFiles/system.dir/src/revisions.cpp.o" "gcc" "CMakeFiles/system.dir/src/revisions.cpp.o.d"
   "/home/athadebesh/projects/motor-control/src/sensor.cpp" "CMakeFiles/system.dir/src/sensor.cpp.o" "gcc" "CMakeFiles/system.dir/src/sensor.cpp.o.d"
   )
 

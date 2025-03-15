@@ -2,8 +2,9 @@
 #define SENSOR_HPP
 
 #include <string>
+#include "revisions.hpp"
 
-class TemperatureSensor {
+class TemperatureSensor : public Revisions{
 private:
     std::string uniqueID;
 public:

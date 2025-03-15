@@ -9,6 +9,7 @@ add_executable(system
     src/sensor.cpp
     src/motor.cpp
     src/realtime.cpp
+    src/revisions.cpp
 )
 target_link_libraries(system pthread rt)
 
@@ -20,6 +21,7 @@ add_executable(test_jitter
     tests/test_jitter.cpp
     src/sensor.cpp
     src/realtime.cpp
+    src/revisions.cpp
 )
 target_link_libraries(test_jitter pthread rt)
 

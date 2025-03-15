@@ -5,6 +5,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/system.dir/src/motor.cpp.o.d"
   "CMakeFiles/system.dir/src/realtime.cpp.o"
   "CMakeFiles/system.dir/src/realtime.cpp.o.d"
+  "CMakeFiles/system.dir/src/revisions.cpp.o"
+  "CMakeFiles/system.dir/src/revisions.cpp.o.d"
   "CMakeFiles/system.dir/src/sensor.cpp.o"
   "CMakeFiles/system.dir/src/sensor.cpp.o.d"
   "system"

@@ -9,6 +9,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/athadebesh/projects/motor-control/src/realtime.cpp" "CMakeFiles/test_jitter.dir/src/realtime.cpp.o" "gcc" "CMakeFiles/test_jitter.dir/src/realtime.cpp.o.d"
+  "/home/athadebesh/projects/motor-control/src/revisions.cpp" "CMakeFiles/test_jitter.dir/src/revisions.cpp.o" "gcc" "CMakeFiles/test_jitter.dir/src/revisions.cpp.o.d"
   "/home/athadebesh/projects/motor-control/src/sensor.cpp" "CMakeFiles/test_jitter.dir/src/sensor.cpp.o" "gcc" "CMakeFiles/test_jitter.dir/src/sensor.cpp.o.d"
   "/home/athadebesh/projects/motor-control/tests/test_jitter.cpp" "CMakeFiles/test_jitter.dir/tests/test_jitter.cpp.o" "gcc" "CMakeFiles/test_jitter.dir/tests/test_jitter.cpp.o.d"
   )

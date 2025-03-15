@@ -272,6 +272,33 @@ src/realtime.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_jitter.dir/build.make CMakeFiles/test_jitter.dir/src/realtime.cpp.s
 .PHONY : src/realtime.cpp.s
 
+src/revisions.o: src/revisions.cpp.o
+.PHONY : src/revisions.o
+
+# target to build an object file
+src/revisions.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/system.dir/build.make CMakeFiles/system.dir/src/revisions.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_jitter.dir/build.make CMakeFiles/test_jitter.dir/src/revisions.cpp.o
+.PHONY : src/revisions.cpp.o
+
+src/revisions.i: src/revisions.cpp.i
+.PHONY : src/revisions.i
+
+# target to preprocess a source file
+src/revisions.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/system.dir/build.make CMakeFiles/system.dir/src/revisions.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_jitter.dir/build.make CMakeFiles/test_jitter.dir/src/revisions.cpp.i
+.PHONY : src/revisions.cpp.i
+
+src/revisions.s: src/revisions.cpp.s
+.PHONY : src/revisions.s
+
+# target to generate assembly for a file
+src/revisions.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/system.dir/build.make CMakeFiles/system.dir/src/revisions.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_jitter.dir/build.make CMakeFiles/test_jitter.dir/src/revisions.cpp.s
+.PHONY : src/revisions.cpp.s
+
 src/sensor.o: src/sensor.cpp.o
 .PHONY : src/sensor.o
 
@@ -347,6 +374,9 @@ help:
 	@echo "... src/realtime.o"
 	@echo "... src/realtime.i"
 	@echo "... src/realtime.s"
+	@echo "... src/revisions.o"
+	@echo "... src/revisions.i"
+	@echo "... src/revisions.s"
 	@echo "... src/sensor.o"
 	@echo "... src/sensor.i"
 	@echo "... src/sensor.s"
