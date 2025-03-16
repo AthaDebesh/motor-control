@@ -16,6 +16,10 @@ int main() {
 
     Sensor TemperatureSensor("ABCDE12");
 
+    Revisions* sensorRevision = &TemperatureSensor;
+
+    sensorRevision->setRev("A");
+
     struct timespec start_time, end_time;
     std::vector<long> jitter_values;
 
