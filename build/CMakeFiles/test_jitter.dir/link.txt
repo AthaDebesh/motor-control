@@ -1,1 +1,0 @@
-/usr/bin/g++ CMakeFiles/test_jitter.dir/tests/test_jitter.cpp.o CMakeFiles/test_jitter.dir/src/sensor.cpp.o CMakeFiles/test_jitter.dir/src/realtime.cpp.o CMakeFiles/test_jitter.dir/src/revisions.cpp.o -o test_jitter  -lpthread -lrt 

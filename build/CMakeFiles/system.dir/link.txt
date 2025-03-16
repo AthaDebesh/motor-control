@@ -1,1 +1,0 @@
-/usr/bin/g++ CMakeFiles/system.dir/src/main.cpp.o CMakeFiles/system.dir/src/sensor.cpp.o CMakeFiles/system.dir/src/motor.cpp.o CMakeFiles/system.dir/src/realtime.cpp.o CMakeFiles/system.dir/src/revisions.cpp.o -o system  -lpthread -lrt 

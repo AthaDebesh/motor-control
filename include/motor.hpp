@@ -4,19 +4,27 @@
 #include <string>
 #include "revisions.hpp"
 
-class MotorController : public Revisions{
+class Motor : public Revisions{
 public:
     // Constructor: Initializes the motor controller with a unique identifier.
-    MotorController(const std::string& id);
+    Motor(const std::string& id);
 
     // Destructor: Cleans up motor controller resources.
-    ~MotorController();
+    ~Motor();
 
     // Updates the motor position based on the given temperature.
-    void updateMotorPosition(double temperature);
+    void updateMotorRevision(double temperature);
+
+    void setRev(std::string Rev);
+    std::string getRev();
 
 private:
-    std::string uniqueID;
+
+    void (Motor::*MotorRev)(double);
+
+    void MotorRevision1(double);
+    void MotorRevision2(double);
+
 };
 
 void MotorRightAction();

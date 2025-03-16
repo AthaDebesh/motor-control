@@ -1,9 +1,0 @@
-/home/athadebesh/projects/motor-control/build/CMakeFiles/system.dir
-/home/athadebesh/projects/motor-control/build/CMakeFiles/test_jitter.dir
-/home/athadebesh/projects/motor-control/build/CMakeFiles/test.dir
-/home/athadebesh/projects/motor-control/build/CMakeFiles/edit_cache.dir
-/home/athadebesh/projects/motor-control/build/CMakeFiles/rebuild_cache.dir
-/home/athadebesh/projects/motor-control/build/CMakeFiles/list_install_components.dir
-/home/athadebesh/projects/motor-control/build/CMakeFiles/install.dir
-/home/athadebesh/projects/motor-control/build/CMakeFiles/install/local.dir
-/home/athadebesh/projects/motor-control/build/CMakeFiles/install/strip.dir

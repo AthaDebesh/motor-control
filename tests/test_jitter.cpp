@@ -14,7 +14,7 @@ int main() {
     setRealTimePriority();
     setCPUAffinity();
 
-    TemperatureSensor sensor("ABC123");
+    Sensor TemperatureSensor("ABCDE12");
 
     struct timespec start_time, end_time;
     std::vector<long> jitter_values;
@@ -25,7 +25,7 @@ int main() {
 
     for (int i = 0; i < 100; ++i)
     {
-        temperature = sensor.readTemperature();
+        temperature = TemperatureSensor.readTemperature();
 
         clock_gettime(CLOCK_MONOTONIC_RAW, &end_time);
 

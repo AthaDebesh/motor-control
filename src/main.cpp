@@ -1,5 +1,6 @@
 #include <iostream>
 #include <ctime>
+#include "revisions.hpp"
 #include "sensor.hpp"
 #include "motor.hpp"
 #include "realtime.hpp"
@@ -7,28 +8,38 @@
 int main()
 {
     std::string motorRev, sensorRev;
+    std::string motorUID, sensorUID;
 
-    std::cout << "Enter Motor Revision : ";
-    std::cin >> motorRev;
+    std::cout << "Enter Motor Revision(A,B) and UniqueID : ";
+    std::cin >> motorRev >> motorUID;
 
-    std::cout << "Enter Sensor Revision : ";
-    std::cin >> sensorRev;
+    std::cout << "Enter Sensor Revision(A,B) and UniqueID: ";
+    std::cin >> sensorRev >> sensorUID;
 
+    Sensor TemperatureSensor(sensorUID);
+    Motor MotorController(motorUID);
+
+    Revisions* sensorRevision = &TemperatureSensor;
+    Revisions* motorRevision = &MotorController;
+
+    sensorRevision->setRev(sensorRev);
+    motorRevision->setRev(motorRev);
+
+    std::cout << "Motor Revision: " << sensorRevision->getRev() << std::endl;
+    std::cout << "Sensor Revision: " << motorRevision->getRev() << std::endl;
+
+    if(sensorRevision->getRev() == "Unknown" || motorRevision->getRev() == "Unknown")
+    {
+        std::cout << "Invalid Revision" << std::endl;
+        return 0;
+    }
     setRealTimePriority();
     setCPUAffinity();
 
-    TemperatureSensor sensor("ABC123");
-    MotorController motor("XYZ789");
-
-    sensor.setRev(sensorRev);
-    motor.setRev(motorRev);
-
-    std::cout << "Motor Revision: " << motor.getRev() << std::endl;
-    std::cout << "Sensor Revision: " << sensor.getRev() << std::endl;
-
     while (true)
     {
-        motor.updateMotorPosition(sensor.readTemperature());
+        
+        MotorController.updateMotorRevision(TemperatureSensor.readTemperature());
     }
 
     return 0;

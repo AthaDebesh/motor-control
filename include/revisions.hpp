@@ -5,14 +5,15 @@
 
 class Revisions{
     public:
-        Revisions();
+        Revisions(const std::string& uniqueID);
         ~Revisions();
 
-        void setRev(std::string Rev);
-        std::string getRev();
+        virtual void setRev(std::string Rev) = 0;
+        virtual std::string getRev() = 0;
 
-    private:
+    protected:
     std::string Revision_id;
+    std::string id;
 };
 
 #endif
