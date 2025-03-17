@@ -27,3 +27,21 @@ System Requirements
 4. Testing Strategy 
 
   To ensure system correctness and robustness a structured testing approach must be implemented. 
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Build the project:
+
+mkdir build
+cd build
+cmake ..
+make
+
+Run the main system:
+sudo ./system
+
+(The system will ask for 2 inputs each for Revision version and Unique ID for Motor and Sensor)
+(Current accepted Revision is A,B. Other inputs will produce invalid Revision version! and stop the execution)
+
+Test the jitter of system to sample every 100ms:
+sudo ./test_jitter
