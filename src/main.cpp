@@ -10,11 +10,17 @@ int main()
     std::string motorRev, sensorRev;
     std::string motorUID, sensorUID;
 
-    std::cout << "Enter Motor Revision(A,B) and UniqueID : ";
-    std::cin >> motorRev >> motorUID;
+    std::cout << "Enter Motor Revision(A,B): ";
+    std::cin >> motorRev;
 
-    std::cout << "Enter Sensor Revision(A,B) and UniqueID: ";
-    std::cin >> sensorRev >> sensorUID;
+    std::cout << "Enter Motor UniqueID : ";
+    std::cin >> motorUID;
+
+    std::cout << "Enter Sensor Revision(A,B): ";
+    std::cin >> sensorRev;
+
+    std::cout << "Enter Sensor UniqueID: ";
+    std::cin >> sensorUID;
 
     Sensor TemperatureSensor(sensorUID);
     Motor MotorController(motorUID);
